@@ -1,6 +1,6 @@
 import pandas as pd
 
-path = 'data1.htm'
+path = 'data.htm'
 with open(path) as f:
     data = pd.read_html(f)
 data = data[0]
