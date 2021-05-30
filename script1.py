@@ -49,13 +49,13 @@ for i in process_data:
 graph = Graph('G', filename='er.gv', engine='dot')
 graph.attr(overlap='false')
 for prc in process_data:
-    graph.node('P_' + str(prc), shape='circle')
+    graph.node('PROC_' + str(prc), shape='circle')
     for data in process_data[prc]:
-        graph.node(data, shape='square')
-        graph.edge('P_' + str(prc), data, ranksep='0.75')
+        graph.node('TABLE_' + data, shape='square')
+        graph.edge('PROC_' + str(prc), 'TABLE_' + data, ranksep='0.75')
 
 for diag in new_diag_process:
-    graph.node(diag, shape='octagon')
+    graph.node('DIAG_' + diag, shape='octagon')
     for prc in new_diag_process[diag]:
-        graph.edge(diag, 'P_' + str(prc), ranksep='0.75')
+        graph.edge('DIAG_' + diag, 'PROC_' + str(prc), ranksep='0.75')
 graph.view()
