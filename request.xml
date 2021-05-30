@@ -1,0 +1,5 @@
+<MAExtractRequest>
+	<CampaignDO detail="ALL">
+		<CampaignType operator="=">decisionCampaign</CampaignType>
+	</CampaignDO>
+</MAExtractRequest>
